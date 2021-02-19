@@ -1,0 +1,24 @@
+.room-box {
+    flex-basis: 100%;
+    height: 20rem;
+}
+@media (min-width: 576px) {
+    .room-box {
+        flex-basis: 100%;
+    }
+ }
+
+@media (min-width: 768px) {  
+    .room-box {
+        flex-basis: 50%;
+    }
+}
+
+@media (min-width: 992px) { 
+    .room-box {
+        flex-basis: 25%;
+    }
+ }
+
+@media (min-width: 1200px) {  }
+@media (min-width: 1400px) {  }

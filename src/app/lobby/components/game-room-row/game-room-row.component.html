@@ -1,0 +1,12 @@
+<div class="card bg-dark text-white h-100 border-primary">
+    <div class="card-header border-secondary">
+        <span><fa-icon [icon]="['fas', 'puzzle-piece']"></fa-icon> {{ gameRoom?.pieces }}</span>
+        <span class="float-end">
+            <span [ngStyle]="{'color': this.isFull() ? 'red' : 'lightgreen'}">(Players: {{ gameRoom?.users?.length}} / {{ gameRoom?.maximumUsers }}) </span>
+        </span>
+    </div>
+    <div class="card-body d-flex flex-column justify-content-center">
+        <img [src]="getThumbnailImage()" class="m-auto d-block img-fluid"  style="height: 10rem;">
+        <button type="button" (click)="joinClick()" class="btn btn-primary mx-auto w-50">Join</button>
+    </div>
+</div>

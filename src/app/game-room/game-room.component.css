@@ -1,0 +1,10 @@
+.unclickable-panel {
+    pointer-events: none;
+}
+.clickable-panel {
+    pointer-events: initial;
+}
+.list-group-item {
+    background-color: transparent;
+    color: white;
+}

@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'Your REST Api URL, e.g. http://localhost:8081',
+  wsApiUrl: 'Your WebSocket URL, e.g. ws://localhost:8081'
 };
 
 /*

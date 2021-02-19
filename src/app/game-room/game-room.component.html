@@ -1,0 +1,15 @@
+<div #pixiContainer class="align-center" id="pixiContainer"></div>
+<div class="fixed-top text-white unclickable-panel">
+    <div class="float-end m-2">
+        <div class="text-center">Player list</div>
+        
+        <ul class="list-group p-2 border border-primary bg-dark">
+            <li *ngFor="let user of gameRoom?.users" class="list-group-item list-group-item-primary">
+                <fa-icon [icon]="['fas', 'puzzle-piece']" [ngStyle]="{'color': '#'+gameRoom?.userColors?.get(user.username)?.substring(2) }"></fa-icon> {{ user.username }}</li>
+        </ul>
+    </div>
+    <div class="float-start m-2 clickable-panel">
+        <button class="btn btn-primary text-center" (click)="zoomIn()"><fa-icon [icon]="['fas', 'search-plus']"></fa-icon></button>
+        <button class="btn btn-primary text-center" (click)="zoomOut()"><fa-icon [icon]="['fas', 'search-minus']"></fa-icon></button>
+    </div>
+</div>

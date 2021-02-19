@@ -1,0 +1,63 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="d-flex justify-content-center text-white">
+            <h1>Create Room</h1>
+        </div>
+        <div class="card mx-auto" style="max-width: 700px;">
+            <div class="card-body">
+                <div class="d-flex justify-content-center">
+                    <form #roomForm="ngForm" (ngSubmit)="onSubmit(roomForm.value)">
+                        <div class="input-group mb-3">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><fa-icon [icon]="['fas', 'user']"></fa-icon></span>
+                            </div>
+                            <input type="number" class="form-control" name="maximum" placeholder="Maximum Players" ngModel
+                            #maximumInput="ngModel" required>
+                        </div>
+                        <span class="help-block" style="color:red;"
+                        *ngIf="maximumInput.invalid && maximumInput.touched">Please enter a value</span>
+                        <div class="input-group mb-3">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><fa-icon [icon]="['fas', 'user']"></fa-icon></span>
+                            </div>
+                            <input type="number" class="form-control" name="pieces" placeholder="Pieces" ngModel
+                            #piecesInput="ngModel" required>
+                        </div>
+                        <span class="help-block" style="color:red;"
+                        *ngIf="piecesInput.invalid && piecesInput.touched">Please enter a value</span>
+                        <div class="input-group mb-3">
+                            <input type="file" class="form-control-file" name="customImage" 
+                            accept='image/*' ngModel
+                            #fileInput
+                            (change)="onCustomImageChange(fileInput?.files)"
+                            >
+                        </div>
+                        <div class="input-group mb-3">
+                            <div *ngIf="this.customImageUrl">
+                                <input #selectedImage class="form-check-input" name="selectedImage" type="radio" id="selectImageRadioCustom" value="-1"
+                                ngModel #selectedImage required>
+                                <label class="form-check-label" for="selectImageRadioCustom">
+                                    <img [src]="this.customImageUrl" class="m-auto d-block img-fluid"  style="height: 10rem;">
+                                </label>
+                            </div>
+                            <div *ngFor="let image of defaultImages; let i = index">
+                                <input class="form-check-input" name="selectedImage" type="radio"  id="selectImageRadio{{i}}" value="{{i}}"
+                                ngModel #selectedImage required
+                                >
+                                <label class="form-check-label" for="selectImageRadio{{i}}">
+                                    <img [src]="this.convertBase64Image(image)" class="m-auto d-block img-fluid"  style="height: 10rem;"/>
+                                </label>
+                            </div>
+                        </div>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+                <div class="mt-4">
+                    <div class="d-flex justify-content-center links">
+                        Don't have an account? <a routerLink="/register" class="ml-2" style="color: #2C3E50;">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

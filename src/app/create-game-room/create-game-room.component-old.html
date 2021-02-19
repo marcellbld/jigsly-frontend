@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="d-flex justify-content-center text-white">
+        <h1>Create Room</h1>
+    </div>
+    <div class="row mb-3 justify-content-center">
+        <div class="col-auto">
+            <div class="col bg-light p-3 rounded">
+                <form [formGroup]="roomForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label for="maximum">Maximum Players:</label>
+                        <input type="number" formControlName="maximum" id="maximum" value="2">
+                    </div>
+                    <div class="form-group">
+                        <label for="pieces">Pieces:</label>
+                        <input type="number" formControlName="pieces" id="pieces" value="2">
+                    </div>
+                    <div class="form-group">
+                        <label for="customImage">Upload Custom Image:</label>
+                        <input type="file" class="form-control-file" name="customImage"  formControlName="customImage"
+                        accept='image/*'
+                        #fileInput
+                        (change)="onCustomImageChange(fileInput?.files)"
+                        >
+                    </div>
+                    <div class="form-group">
+                        <div *ngIf="this.customImageUrl">
+                            <input class="form-check-input" type="radio" formControlName="selectedImage" id="selectImageRadioCustom" value="-1">
+                            <label class="form-check-label" for="selectImageRadioCustom">
+                                <br>
+                                <img [src]="this.customImageUrl">
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline" *ngFor="let image of defaultImages; let i = index">
+                            <input class="form-check-input" type="radio" formControlName="selectedImage" id="selectImageRadio{{i}}" value="{{i}}">
+                            <label class="form-check-label" for="selectImageRadio{{i}}">
+                                <br>
+                                <img [src]="this.convertBase64Image(image)"/>
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="row text-white pt-2 m-2 justify-content-between" >
+    <div class="col my-auto"><h1 class="ml-3">jigsly.</h1></div>
+    <div class="col-auto my-auto">
+        <button (click)="createRoom()" class="btn btn-primary mx-2">Create Room</button>
+        
+        <a *ngIf="!authService.isUserLoggedIn()" class="btn btn-primary" routerLink="/login">Login</a>
+        <span *ngIf="authService.isUserLoggedIn()">{{ authService.getUsername() }}</span>
+    </div>
+</div>
+<div class="d-flex flex-wrap room-row justify-content-left">
+    <div class="room-box px-3 py-2" *ngFor="let room of gameRooms">
+        <app-game-room-row [gameRoom]="room"></app-game-room-row>
+    </div>
+</div>
