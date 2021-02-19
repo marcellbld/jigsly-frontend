@@ -1,27 +1,7 @@
-# JigslyApp
+# Jigsly. (Frontend)
+<b>Jigsly.</b> is a multiplayer Jigsaw Puzzle application.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.1.
+The frontend part of the application is written in Angular. It uses Bootstrap 5, and PixiJS in the Game Room page.
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Game Description
+In the game players can play Jigsaw Puzzle with each other in real-time. Registered users can create custom rooms with selected <i>Maximum player number</i>, <i>Pieces number</i>, and they can <i>choose a default image</i> or <i>upload their own image</i>. These rooms are joinable for everyone
